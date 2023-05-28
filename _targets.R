@@ -26,17 +26,22 @@ future::plan(future.callr::callr)
 tar_source()
 # source("other_functions.R") # Source other scripts as needed. # nolint
 
+string <- "a string"
+nrow_df <- 10
+size_parallel <- 2
+
 # Replace the target list below with your own:
-list(
-  tarchetypes::tar_group_size(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100)), 
-    size = 2
-  ),
-  tar_target(
-    name = output,
-    command = processing_func(data), 
-    pattern = map(data),  
-    iteration = "vector"
-  )
-)
+# list(
+#   tarchetypes::tar_group_size(
+#     name = data,
+#     command = tibble(x = rnorm(nrow_df), y = rnorm(nrow_df)), 
+#     size = 2
+#   ),
+#   tar_target(
+#     name = output,
+#     command = processing_func(data), 
+#     pattern = map(data)
+#   )
+# )
+
+pipeline_func(string = string, nrow_df = nrow_df, size_parallel = size_parallel)
