@@ -44,4 +44,11 @@ size_parallel <- 2
 #   )
 # )
 
-pipeline_func(string = string, nrow_df = nrow_df, size_parallel = size_parallel)
+# pipeline_func(string_arg = PFUSetup::get_abs_paths(version = 1.1)[["mw_concordance_path"]], 
+#               nrow_df = nrow_df, 
+#               size_parallel = size_parallel)
+
+
+pipeline_func(string_arg = "a string", 
+              nrow_df = nrow_df, 
+              size_parallel = size_parallel)
